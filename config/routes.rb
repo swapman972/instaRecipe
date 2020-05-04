@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   resources :new_recipes
-  resources :meals
   resources :reactions
   resources :posts
   resources :recipe_ingredients
