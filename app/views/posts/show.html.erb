@@ -1,0 +1,8 @@
+<h1><%= @post.description %> </h1>
+
+<h2> <%= link_to @post.user.name, user_path(@post.user) %> </h2>
+<br>
+<h3>Comments</h3>
+<% @post.post_react.each do |react|  %> 
+<h3> <%= react.comment %> || Likes: <%= react.like %> || Dislike <%= react.dislike %> || Love: <%= react.love%> || Disgust: <%= react.disgust %> </h3>
+<%end%> 

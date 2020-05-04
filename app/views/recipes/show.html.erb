@@ -2,6 +2,8 @@
 
 <p> <%= @recipe.instructions %> </p>
 
+
+<h4>Whos cooking? </h4>
 <ul>
     <% @recipe.posts.each do |post| %> 
     <li> <%= link_to post.user.name, user_path(post.user) %> gave this a <%= post.rating %> out of 5  </li>
