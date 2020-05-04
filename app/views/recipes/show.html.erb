@@ -1,0 +1,12 @@
+<h1> <%= @recipe.name %> </h1>
+
+<p> <%= @recipe.instructions %> </p>
+
+<ul>
+    <% @recipe.posts.each do |post| %> 
+    <li> <%= link_to post.user.name, user_path(post.user) %> gave this a <%= post.rating %> out of 5  </li>
+<%end%> 
+</ul>
+
+
+
