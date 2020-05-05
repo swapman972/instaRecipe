@@ -1,2 +1,0 @@
-class NewRecipeIngredient < ApplicationRecord
-end

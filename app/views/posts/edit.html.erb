@@ -1,1 +1,12 @@
-edit view
+<h1> Edit </h1>
+
+<%= form_for @post do |p| %> 
+<%= p.label :description %>
+<%= p.text_field :description  %> 
+<br>
+<%= p.label :rating %> 
+<%= p.number_field :rating %> 
+<br> <br>
+<%= p.submit value = "Validate this edit"%> 
+
+<%end%> 

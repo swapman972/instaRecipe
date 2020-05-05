@@ -6,7 +6,7 @@ RecipeIngredient.destroy_all
 Reaction.destroy_all
 
 100.times do 
-    User.create(name:Faker::Name.name , age: rand(10..90), email: Faker::Internet.email, location: Faker::Address.state, picture: Faker::Avatar )
+    User.create(name:Faker::Name.name , age: rand(10..90), email: Faker::Internet.email, location: Faker::Address.state, picture: Faker::Avatar.image )
 end 
 
 300.times do

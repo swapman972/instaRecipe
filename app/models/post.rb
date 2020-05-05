@@ -1,7 +1,6 @@
 class Post < ApplicationRecord
     belongs_to :user 
-    belongs_to :recipe, optional: true  
-    belongs_to :new_recipe, optional: true 
+    belongs_to :recipe
 
     def post_react
         Reaction.all.select do |re| 

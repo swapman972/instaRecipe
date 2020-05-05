@@ -1,9 +1,8 @@
 <h1> Featured Ingredients</h1>
 
-<p> <%= link_to 'Add Ingredient', new_ingredient_path %> </p>
-
 <ul>
-    <% @ingredients.sort.each do |i| %>
-   <li> <%= link_to i.name, ingredient_path(i) %> </li>
-<%end%>
+    <% @ingredients.each do |i| %>
+        <li><%= link_to i.name, ingredient_path(i) %></li>
+    <%end%>
+
 </ul>
