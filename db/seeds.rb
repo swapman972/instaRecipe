@@ -22,7 +22,7 @@ end
 end 
 
 400.times do 
-    Post.create(description: Faker::Hipster.paragraph(sentence_count: 2), rating: rand(1..5), user_id: User.all.sample.id, recipe_id: Recipe.all.sample.id)
+    Post.create(description: Faker::Hipster.paragraph(sentence_count: 2), rating: rand(1..5), user_id: User.all.sample.id, recipe_id: Recipe.all.sample.id, picture: Faker::Placeholdit.image)
 end 
 
 800.times do 
