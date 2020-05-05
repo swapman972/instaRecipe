@@ -22,7 +22,11 @@ end
 end 
 
 400.times do 
+<<<<<<< HEAD
     Post.create(description: Faker::Hipster.paragraph(sentence_count: 2), rating: rand(1..5), user_id: User.all.sample.id, recipe_id: Recipe.all.sample.id, picture: Faker::Placeholdit.image)
+=======
+    Post.create(description: Faker::Hipster.paragraph(sentence_count: 2), rating: rand(1..5), user_id: User.all.sample.id, recipe_id: Recipe.all.sample.id, picture: Faker::Avatar.image)
+>>>>>>> tuesday
 end 
 
 800.times do 

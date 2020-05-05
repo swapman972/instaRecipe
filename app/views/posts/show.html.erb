@@ -1,11 +1,16 @@
 <h1><%= @post.recipe.name %> </h1>
 <h3><%= @post.description %> </h3>
 <br>
+<<<<<<< HEAD
     <img src="<%="#{@post.picture}"%>">
 
+=======
+<img src= <%= @post.picture %> > <br>
+>>>>>>> tuesday
 <br>
 <h2> by <%= link_to @post.user.name, user_path(@post.user) %> </h2>
 <br>
+
 <p> Likes: <%= @post.total_likes %>  </p>
 <p> Dislikes: <%= @post.total_dislike %>  </p>
 <p> Loves: <%= @post.total_love %>  </p>

@@ -1,3 +1,12 @@
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.checked {
+  color: red;
+}
+</style>
+</head>
+
 <h1>Post feed</h1>
 
 <ul>
@@ -7,8 +16,25 @@
 <%= link_to Recipe.find(post.recipe_id).name, recipe_path(post.recipe_id) %>
 <br>
 
+<<<<<<< HEAD
 This chef gave a rating of <%=post.rating%> out of 5 for that recipe<br><br>
 If you would like to comment on this post hit the following 
+=======
+
+<img src= <%= post.picture %> alt="<%post.description%>"> <br>
+
+
+Recommand from the chef: 
+<%(post.rating).times do %>
+    <span class="fa fa-star checked"></span>
+<% end %>
+<% (5 - (post.rating)).times do %>
+<span class="fa fa-star"></span>
+<% end %>
+<br><br>
+
+Check more about this post!
+>>>>>>> tuesday
 <%= button_to 'Check this post', post_path(post.id), method: :get %><br>
 <%end%> </li>
 </ul>
