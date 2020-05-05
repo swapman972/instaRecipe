@@ -1,11 +1,4 @@
 class ReactionsController < ApplicationController
-    def index
-        @reactions = Reaction.all
-    end
-
-    def show
-        @reaction = Reaction.find(params[:id])
-    end
 
     def new
         @reaction = Reaction.new 
