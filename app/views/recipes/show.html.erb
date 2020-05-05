@@ -1,14 +1,22 @@
 <h1> <%= @recipe.name %> </h1>
 
 <p> <%= @recipe.instructions %> </p>
-
-
+<br>
 <h4>Whos cooking? </h4>
 <ul>
     <% @recipe.posts.each do |post| %> 
     <li> <%= link_to post.user.name, user_path(post.user) %> gave this a <%= post.rating %> out of 5  </li>
 <%end%> 
 </ul>
+<br>
+
+<h3>Ingredients</h3>
+<ul>
+    <% RecipeIngredient.all.each do |ri| %> 
+    <li><%= ri.ingredient.name %> </li>
+<%end%> 
+</ul>
+
 
 
 

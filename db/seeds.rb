@@ -17,7 +17,7 @@ end
     Ingredient.create(name: Faker::Food.ingredient)
 end 
 
-600.times do 
+300.times do 
     RecipeIngredient.create(recipe_id: Recipe.all.sample.id, ingredient_id: Ingredient.all.sample.id)
 end 
 
