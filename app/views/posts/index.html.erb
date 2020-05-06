@@ -15,7 +15,7 @@
 <%= link_to Recipe.find(post.recipe_id).name, recipe_path(post.recipe_id) %>
 <br>
 
-<img src="<%="#{post.picture}"%>"><br>
+<img src=<%= post.recipe.picture %>> <br>
 
 Recommand from the chef: 
 <%(post.rating).times do %>
