@@ -1,17 +1,17 @@
-<h1> <%= @user.name %> </h1>
-<h2> <%= @user.location %> </h2>
-<h2> Age: <%= @user.age %> </h2>
+<h1 class= 'tile rec'> <%= @user.name %> </h1>
+<h2 class= 'tile rec'> <%= @user.location %> </h2>
+<h class= 'tile rec'2> Age: <%= @user.age %> </h2>
 
-<img src="<%="#{@user.picture}"%>">
+<img class= 'tile rec' src="<%="#{@user.picture}"%>">
 
 <br>
-<p> <%= link_to 'Edit User', edit_user_path(@user)%> </p>
+<p class= 'tile rec'> <%= link_to 'Edit User', edit_user_path(@user)%> </p>
 
-<h3> Posts </h3>
+<h3 class= 'tile rec'> Posts </h3>
 <ul>
     <% @user.posts.each do |post| %> 
-    <li><%= link_to post.recipe.name, post_path(post) %> || Rading <%= post.rating %> </li>
+    <li class= 'tile rec'><%= link_to post.recipe.name, post_path(post) %> || Rading <%= post.rating %> </li>
     <%end%> 
 </ul>
 
-<%= button_to 'Delete User', user_path(@user), method: :delete %> 
+<p class= 'tile rec'><%= button_to 'Delete User', user_path(@user), method: :delete %> </p>
