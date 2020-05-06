@@ -1,7 +1,8 @@
 <h1><%= @post.recipe.name %> </h1>
 <br>
 
-<img src= <%= @post.picture %> > <br>
+<img src= <%= @post.recipe.picture %> > <br>
+
 <br>
 <h3><%= @post.description %> </h3>
 <h2> by <%= link_to @post.user.name, user_path(@post.user) %> </h2>

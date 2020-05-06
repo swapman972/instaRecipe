@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 2020_05_06_002540) do
   create_table "posts", force: :cascade do |t|
     t.string "description"
     t.integer "rating"
-    t.string "picture"
     t.integer "user_id"
     t.integer "recipe_id"
     t.integer "like"
@@ -58,6 +57,8 @@ ActiveRecord::Schema.define(version: 2020_05_06_002540) do
     t.string "name"
     t.integer "cuisine_id"
     t.string "picture"
+    t.integer "prep_time"
+    t.integer "serving_size"
     t.string "instructions"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

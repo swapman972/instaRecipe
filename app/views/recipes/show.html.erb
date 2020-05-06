@@ -1,6 +1,6 @@
 <h1> <%= @recipe.name %> </h1>
 
-<p> <%= @recipe.instructions %> </p>
+<%= @recipe.instructions %>
 <br>
 <h4>Whos cooking? </h4>
 <ul>
@@ -9,11 +9,15 @@
 <%end%> 
 </ul>
 <br>
+<ul>
+<li>Type of cuisine: <%= link_to @recipe.cuisine.name, cuisine_path(@recipe.cuisine) %> </li>
+<li>Prep time: <%=@recipe.prep_time%> min</li>
+<li>Serving size: <%=@recipe.serving_size%> person</li></ul>
 
 <h3>Ingredients</h3>
 <ul>
-    <% RecipeIngredient.all.each do |ri| %> 
-    <li><%= ri.ingredient.name %> </li>
+    <% @recipe.ingredients.each do |ri| %> 
+    <li><%= link_to ri.name, ingredient_path(ri) %> </li>
 <%end%> 
 </ul>
 

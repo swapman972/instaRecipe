@@ -3,7 +3,6 @@ class CreatePosts < ActiveRecord::Migration[6.0]
     create_table :posts do |t|
       t.string :description
       t.integer :rating
-      t.string :picture
       t.integer :user_id
       t.integer :recipe_id
       t.integer :like
