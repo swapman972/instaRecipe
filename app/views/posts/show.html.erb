@@ -1,24 +1,47 @@
 <h1><%= @post.recipe.name %> </h1>
-<h3><%= @post.description %> </h3>
 <br>
-<<<<<<< HEAD
-    <img src="<%="#{@post.picture}"%>">
 
-=======
 <img src= <%= @post.picture %> > <br>
->>>>>>> tuesday
 <br>
+<h3><%= @post.description %> </h3>
 <h2> by <%= link_to @post.user.name, user_path(@post.user) %> </h2>
 <br>
 
-<p> Likes: <%= @post.total_likes %>  </p>
-<p> Dislikes: <%= @post.total_dislike %>  </p>
-<p> Loves: <%= @post.total_love %>  </p>
-<p> Disgust: <%= @post.total_disgust %>  </p>
+<p> Likes: <%= @post.like %>  </p>
+
+<div>
+    Liked: <%= @post.like %>
+    <%= button_to 'Like this post', like_path(@post), method: :put, class: "btn btn info" %>
+</div>
+
+<p> Dislikes: <%= @post.dislike %>  </p>
+
+<div>
+    Dislikes: <%= @post.dislike %>
+    <%= button_to 'dislike this post', dislike_path(@post), method: :put, class: "btn btn info" %>
+</div>
+
+<p> Loves: <%= @post.love %>  </p>
+
+<div>
+    love: <%= @post.love %>
+    <%= button_to 'love this post', love_path(@post), method: :put, class: "btn btn info" %>
+</div>
+
+<p> Disgust: <%= @post.disgust %>  </p>
+
+<div>
+    Disgust: <%= @post.disgust %>
+    <%= button_to 'digust this post', disgust_path(@post), method: :put, class: "btn btn info" %>
+</div>
 
 <br>
 <h4>Comments</h4>
 <% @post.post_react.each do |react|  %> 
 <h4> <%= react.comment %></h4>
 <%end%> 
+
+
+<%= button_to 'Edit this post', edit_post_path(@post), method: :get%> 
+<%= button_to 'Delete this post', posts_path, method: :delete%><br>
 

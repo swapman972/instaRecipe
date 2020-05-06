@@ -1,6 +1,8 @@
 class Post < ApplicationRecord
     belongs_to :user 
     belongs_to :recipe
+    has_many :reactions
+    validates :rating, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 5 }
 
     def post_react
         Reaction.all.select do |re| 
@@ -8,27 +10,4 @@ class Post < ApplicationRecord
         end
     end 
 
-    def total_likes 
-        post_react.map do |post|
-            post.like 
-        end.sum 
-    end 
-
-    def total_dislike 
-        post_react.map do |post|
-            post.dislike 
-        end.sum 
-    end 
-
-    def total_love 
-        post_react.map do |post|
-            post.love 
-        end.sum 
-    end 
-
-    def total_disgust 
-        post_react.map do |post|
-            post.disgust 
-        end.sum 
-    end 
 end

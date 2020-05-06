@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+
     def index
         @posts = Post.all.order(:created_at)
     end
@@ -13,7 +14,12 @@ class PostsController < ApplicationController
 
     def create
         @post = Post.create(post_params)
-        redirect_to post_path(@post.id)
+        if @post.valid?
+            redirect_to post_path(@post.id)
+        else
+            flash[:errors] = @post.errors.full_messages
+            redirect_to new_post_path
+        end
     end
 
     def edit
@@ -22,14 +28,42 @@ class PostsController < ApplicationController
 
     def update
         @post = Post.find(params[:id])
-        @post.update(post_params)
-        redirect_to post_path(@post.id)
+        if @post.update(post_params)
+            redirect_to post_path(@post.id)
+        else
+            flash[:errors] = @post.errors.full_messages
+            redirect_to edit_post_path
+        end
     end
 
     def destroy
         @post = Post.find(params[:id])
         @post.destroy
         redirect_to posts_path
+    end
+
+    def like 
+        @post = Post.find(params[:id])
+        @post.increment!(:like)
+        redirect_to post_path(@post)
+    end
+
+    def dislike 
+        @post = Post.find(params[:id])
+        @post.increment!(:dislike)
+        redirect_to post_path(@post)
+    end
+
+    def love 
+        @post = Post.find(params[:id])
+        @post.increment!(:love)
+        redirect_to post_path(@post)
+    end
+
+    def disgust 
+        @post = Post.find(params[:id])
+        @post.increment!(:disgust)
+        redirect_to post_path(@post)
     end
 
     private

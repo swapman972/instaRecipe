@@ -6,6 +6,10 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.string :picture
       t.integer :user_id
       t.integer :recipe_id
+      t.integer :like
+      t.integer :dislike
+      t.integer :disgust
+      t.integer :love
 
       t.timestamps
     end
