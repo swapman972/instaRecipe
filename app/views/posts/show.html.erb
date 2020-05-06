@@ -7,29 +7,21 @@
 <h2> by <%= link_to @post.user.name, user_path(@post.user) %> </h2>
 <br>
 
-<p> Likes: <%= @post.like %>  </p>
-
 <div>
     Liked: <%= @post.like %>
     <%= button_to 'Like this post', like_path(@post), method: :put, class: "btn btn info" %>
 </div>
-
-<p> Dislikes: <%= @post.dislike %>  </p>
-
+<br>
 <div>
     Dislikes: <%= @post.dislike %>
     <%= button_to 'dislike this post', dislike_path(@post), method: :put, class: "btn btn info" %>
 </div>
-
-<p> Loves: <%= @post.love %>  </p>
-
+<br>
 <div>
     love: <%= @post.love %>
     <%= button_to 'love this post', love_path(@post), method: :put, class: "btn btn info" %>
 </div>
-
-<p> Disgust: <%= @post.disgust %>  </p>
-
+<br>
 <div>
     Disgust: <%= @post.disgust %>
     <%= button_to 'digust this post', disgust_path(@post), method: :put, class: "btn btn info" %>
@@ -43,5 +35,5 @@
 
 
 <%= button_to 'Edit this post', edit_post_path(@post), method: :get%> 
-<%= button_to 'Delete this post', posts_path, method: :delete%><br>
+<%= button_to 'Delete this post', post_path(@post), method: :delete%><br>
 
