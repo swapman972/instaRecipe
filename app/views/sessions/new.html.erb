@@ -1,0 +1,25 @@
+<%if flash[:error]%>
+    <% flash.each do |type, msg| %>
+    <div>
+        <h2 class= 'tile rec'> <%= msg %></h2>
+    </div>
+    <% end %>
+<% end %>
+
+<h2 class= 'tile rec'> New User </h2>
+<br>
+
+<div class= 'tile rec'> 
+<%= form_for :session do |u| %> 
+<br>
+<br>
+<%= u.label :Email %> 
+<%= u.text_field :email %> 
+<br>
+<br> 
+<%= u.label :Password %> 
+<%= u.text_field :password %> 
+<br>
+<br>
+<%= u.submit %> 
+<% end %>

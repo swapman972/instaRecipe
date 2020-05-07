@@ -7,6 +7,7 @@ RecipeIngredient.destroy_all
 Reaction.destroy_all
 Cuisine.destroy_all
 
+
 3.times do 
     response = RestClient.get('https://randomuser.me/api/')
     data = JSON.parse(response)
@@ -14,7 +15,7 @@ Cuisine.destroy_all
 end 
 
 15.times do
-    response = RestClient.get('https://api.spoonacular.com/recipes/random?apiKey=7b8110c04e0c4c7baa30f6a2d5e1c863')
+    response = RestClient.get("https://api.spoonacular.com/recipes/random?apiKey=#{ENV['API_KEY']}")
     data = JSON.parse(response)
 
     cuisine = Cuisine.create_or_find_by(name: data["recipes"][0]["dishTypes"][0]) 
@@ -34,5 +35,5 @@ end
 end 
 
 50.times do 
-    Reaction.create(comment: Faker::Hipster.sentences(number: 1), post_id: Post.all.sample.id) 
+    Reaction.create(comment: Faker::Hipster.sentences(number: 1), post_id: Post.all.sample.id, user_id: User.all.sample.id) 
 end 

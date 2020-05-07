@@ -1,3 +1,12 @@
+<%if flash[:errors]%>
+    <%flash[:errors].each do |error|%>
+        <%error%>
+    <% end %>
+<% elsif flash[:error]%>
+    <% flash.each do |type, msg| %>
+        <%= msg %>  
+    <% end %>
+<% end %>
 
 <div>
     <% @users.each do |user| %> 

@@ -5,9 +5,21 @@
   color: red;
 }
 </style>
+<<<<<<< HEAD
 </head> -->
 <div class='showpost'>
 <h1 class='tile'><%= @post.recipe.name %> </h1>
+=======
+</head>
+
+<%if flash[:error]%>
+    <% flash.each do |type, msg| %>
+        <%= msg %>  
+    <% end %>
+<% end %>
+
+<h1><%= @post.recipe.name %> </h1>
+>>>>>>> thursday
 <br>
 
 
@@ -48,7 +60,8 @@ Recommand from the chef:
 
 <h4 class='list'>Comments:</h4>
 <% @post.post_react.each do |react|  %> 
-<h4> <%= react.comment %> 
+<div class='tile'> <h3> <%=User.find(react.user_id).name%> commented:</h3>
+<h4> <%= react.comment %> </div>
 <%= button_to 'Edit this comment', edit_post_reaction_path(@post, react), method: :get%> 
 <%= button_to 'Delete this comment', [@post, react], method: :delete%><br>
 </h4>
