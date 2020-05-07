@@ -9,19 +9,25 @@
 
 <h4 class= 'tile rec'><%= form_for @post do |f| %>
 Who is cooking? <br>
-<%=f.label :chef%>
+<%=f.label :Chef%>
 <%=f.collection_select :user_id, User.all, :id, :name%><br><br>
 
-What are you cooking?<br>
-<%=f.label :recipe%>
+What are they cooking?<br>
+<%=f.label :Recipe%>
 <%=f.collection_select :recipe_id, Recipe.all, :id, :name%><br><br>
 
-<%=f.label :Comments%>
+<%=f.label :Description%>
 <%=f.text_area :description%><br><br>
 
-<%=f.label :rating%>
-<%=f.number_field :rating%><br>
+<%=f.label :Rating%>
+<%=f.number_field :rating%><br><br>
+
+<%=f.label :Picture %> 
+<%=f.file_field :picture %><br><br>
 
 <%=f.submit value="Create your post"%>
   
 <% end %>
+<br>
+<br>
+<%= link_to 'Back', posts_path %>

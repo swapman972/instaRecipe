@@ -1,6 +1,6 @@
 <h1 class= 'tile rec'> <%= @ingredient.name %> </h1>
 
-<img src= <%= @ingredient.picture %> > <br>
+<%= image_tag("#{@ingredient.picture}") %> <br>
 
 <ul class= 'tile rec'>
     <% @ingredient.recipes.each do |ri| %>

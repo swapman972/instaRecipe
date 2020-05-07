@@ -3,7 +3,6 @@ class CreateReactions < ActiveRecord::Migration[6.0]
     create_table :reactions do |t|
       t.string :comment
       t.integer :post_id
-      t.integer :user_id
 
       t.timestamps
     end
