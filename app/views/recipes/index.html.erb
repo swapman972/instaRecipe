@@ -1,6 +1,6 @@
 <h1 class = 'tile' >Featured Recipes</h1>
 
-<div class='tile'>
+<div class='showpost'>
 <ul>
 <% @recipes.each do |rec| %> 
     <li class ='tile '><%=link_to rec.name, recipe_path(rec)%> type of cuisine: <%=Cuisine.find(rec.cuisine_id).name%></li><br>

@@ -1,11 +1,11 @@
-<!-- <head>
+<head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 .checked {
   color: red;
 }
 </style>
-</head> -->
+</head>
 <div class='showpost'>
 <h1 class='tile'><%= @post.recipe.name %> </h1>
 </head>
@@ -29,13 +29,15 @@
 <h2> by <%= link_to @post.user.name, user_path(@post.user) %> </h2>
 
 Recommand from the chef: 
+<div class='rating_containe'>
 <%(@post.rating).times do %>
     <span class="fa fa-star checked"></span>
 <% end %>
 <% (5 - (@post.rating)).times do %>
 <span class="fa fa-star"></span>
 <% end %>
-<p>
+</div>
+<p class='emoji'>
     <%= @post.like %>
     <%= link_to '👍', like_path(@post), method: :put%>
 

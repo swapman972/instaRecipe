@@ -15,7 +15,7 @@ nav {
     float: left;
     width: 100%;
     height: 40px;
-    font-size: 25px;
+    font-size: 18px;
     display: block;
     background-color: hsl(0, 81%, 43%);
     /* box-shadow: 3px 3px 30px #042a34bd; */
@@ -23,7 +23,6 @@ nav {
     flex-direction: column;
     align-items: center;
     color: white;
-
 }
 nav a {
     color: white;
@@ -55,7 +54,7 @@ main {
     align-items: center;
 }
 .showpost{
-    margin: 4px 4px 40px 4px;
+    margin: 4px 4px 40px 200px;
     font-weight: 800;
     background-color: rgb(255, 255, 255);
     padding: 30px 40px; 
@@ -173,7 +172,7 @@ ul {
 }
 
 .container {
-    margin-top: -20px;
+  margin-top: -5px;
   font-family: Arial, Helvetica, sans-serif;
 }
 .rating_container {
@@ -186,6 +185,10 @@ ul {
     font-family: Arial, Helvetica, sans-serif;
 
 }
+.emoji{
+    font-weight: 70x;
+    font-size: 70px;
+    text-decoration: none;
 }
 html{
     align-items: center;
