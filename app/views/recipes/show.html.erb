@@ -3,10 +3,10 @@
 
 <p class= 'tile rec'> <%= @recipe.instructions %></p>
 <br>
-<h3>Who cooked this dish? </h3>
+<h3 class ='postcard'>Who cooked this dish? </h3>
 <ul>
     <% @recipe.posts.each do |post| %> 
-    <li> <%= link_to post.user.name, user_path(post.user) %> rated this 
+    <li class='tile'> <%= link_to post.user.name, user_path(post.user) %> rated this 
     <%= link_to 'recipe', post_path(post) %>  
     <%= post.rating %> out of 5 stars </li><br>
 <%end%> 

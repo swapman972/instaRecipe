@@ -1,23 +1,23 @@
-<!-- <head>
+<head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 .checked {
   color: red;
 }
 </style>
-</head> -->
+</head>
 
-<h1 class= 'tile rec'>Post feed</h1>
+<h1 class= 'tile'>Post feed</h1>
 <br>
-<ul>
+<div class= 'background'>
 <% @posts.each do |post| %>
-<h3> Create Your own post => <%= link_to 'here', new_post_path %> <= </h3>
-  <li><%= link_to User.find(post.user_id).name, user_path(post.user_id) %> cooked 
+<div class='postcard'>
+  <%= link_to User.find(post.user_id).name, user_path(post.user_id) %> cooked 
   <%= link_to Recipe.find(post.recipe_id).name, recipe_path(post.recipe_id) %>
   <br>
 
-  <img src=<%= post.recipe.picture %>> <br>
-
+  <img class= 'rec' src=<%= post.recipe.picture %>> <br>
+<div class='containstars'>
   Recommand from the chef: 
   <%(post.rating).times do %>
       <span class="fa fa-star checked"></span>
@@ -26,10 +26,12 @@
     <span class="fa fa-star"></span>
   <% end %>
   <br><br>
+</div>
 
   Check more about this post!
   <%= button_to 'Check this post', post_path(post.id), method: :get %><br>
-<%end%> </li>
-</ul>
+</div>
+<%end%> 
+</div>
 <br>
 <br>

@@ -1,8 +1,18 @@
 <h1 class= 'tile rec'>Users </h1>
 
-<h4 class= 'tile rec'><%= link_to 'New User Sign up!', new_user_path %> </h4>
-<ul>
          <% @users.each do |user| %> 
-    <li class= 'tile'><%= link_to user.name, user_path(user) %>  </li>
+         <div class='usertile'>
+         <img src=<%=user.picture %> > 
+         <br>
+     <%= link_to user.name, user_path(user) %> 
+     <br>
+     age <%= user.age %> 
+     <br>
+     Recent Activity 
+     <% user.posts.each do |post| %>
+     <%= link_to post.description, post_path(post) %> 
+         <%end%> 
+     </div>
     <%end%> 
-</ul>
+
+ 

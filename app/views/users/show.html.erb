@@ -7,9 +7,9 @@
 </style>
 </head>
 
-<h1> <%= @user.name %> </h1>
-<h2> <%= @user.location %> </h2>
-<h2> Age: <%= @user.age %> </h2>
+<h1 class='tile'> <%= @user.name %> </h1>
+<h2 class='tile'> <%= @user.location %> </h2>
+<h2 class='tile'> Age: <%= @user.age %> </h2>
 
 <img  class= 'tile' src="<%="#{@user.picture}"%>">
 
@@ -17,9 +17,9 @@
 <p class= 'tile rec'> <%= link_to 'Edit User', edit_user_path(@user)%> </p>
 
 <h3 class= 'tile rec'> Posts </h3>
-<ul>
+<ul class= 'rec'>
     <% @user.posts.each do |post| %> 
-        <li><%= link_to post.recipe.name, post_path(post) %> || Rating 
+        <li class ='list'><%= link_to post.recipe.name, post_path(post) %> || Rating 
         <%(post.rating).times do %> 
             <span class="fa fa-star checked"></span>
         <% end %>
