@@ -7,26 +7,31 @@
 </style>
 </head>
 
-<h1 class='tile'> <%= @user.name %> </h1>
-<h2 class='tile'> <%= @user.location %> </h2>
-<h2 class='tile'> Age: <%= @user.age %> </h2>
+<div class='showpageuser'>
+    <h1> <%= @user.name %> </h1>
+    <h2> <%= @user.location %> </h2>
+    <h2> Age: <%= @user.age %> </h2>
 
-<img  class= 'tile' src="<%="#{@user.picture}"%>">
+    <img src="<%="#{@user.picture}"%>">
 
-<br>
-<p class= 'tile rec'> <%= link_to 'Edit User', edit_user_path(@user)%> </p>
+    <br>
+    <p> <%= link_to 'Edit User', edit_user_path(@user)%> </p>
 
-<h3 class= 'tile rec'> Posts </h3>
-<ul class= 'rec'>
-    <% @user.posts.each do |post| %> 
-        <li class ='list'><%= link_to post.recipe.name, post_path(post) %> || Rating 
-        <%(post.rating).times do %> 
-            <span class="fa fa-star checked"></span>
-        <% end %>
-        <% (5 - (post.rating)).times do %>
-            <span class="fa fa-star"></span>
-        <% end %>
-    <%end%> 
-</ul>
+    <h3 > Posts </h3>
+    <div>
+        <% @user.posts.each do |post| %> 
+        <div class='rating_container'><%= link_to post.recipe.name, post_path(post) %> <br> Rating 
+            <%(post.rating).times do %> 
+                <span class="fa fa-star checked"></span>
+            <% end %>
+     
+            <% (5 - (post.rating)).times do %>
+                <span class="fa fa-star"></span>
+            
+            <% end %>
+        </div>
+        <%end%> 
+    </div>
 
-<p class= 'rec'><%= button_to 'Delete User', user_path(@user), method: :delete %> </p>
+<p class='container'><%= button_to 'Delete User', user_path(@user), method: :delete %> </p>
+</div>

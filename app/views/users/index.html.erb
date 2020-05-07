@@ -1,18 +1,22 @@
-<h1 class= 'tile rec'>Users </h1>
 
-         <% @users.each do |user| %> 
-         <div class='usertile'>
-         <img src=<%=user.picture %> > 
-         <br>
-     <%= link_to user.name, user_path(user) %> 
-     <br>
-     age <%= user.age %> 
-     <br>
-     Recent Activity 
-     <% user.posts.each do |post| %>
-     <%= link_to post.description, post_path(post) %> 
-         <%end%> 
-     </div>
+<div>
+    <% @users.each do |user| %> 
+    <div class='indexpageuser'>
+       <%= link_to user.name, user_path(user), class: "tile_header" %> 
+       <br>
+    <img src=<%=user.picture %> > 
+    <br>
+    <div class="tile_text">
+        age <%= user.age %> 
+    </div>
+    
+    <br>
+    <div class="tile_text padding_bottom_30">Recent Activity</div> 
+    <% user.posts.each do |post| %>
+    <%= link_to post.description, post_path(post), class: "tile_text" %> 
+        <%end%> 
+    </div>
     <%end%> 
+</div>
 
  

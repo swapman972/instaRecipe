@@ -1,27 +1,25 @@
-<div>
-<h1 class= 'tile rec'> <%= @recipe.name %> </h1>
+<div class='recipeshow'>
+<h1> <%= @recipe.name %> </h1>
 
-<p class= 'tile rec'> <%= @recipe.instructions %></p>
+<p> <%= @recipe.instructions %></p>
 <br>
-<h3 class ='postcard'>Who cooked this dish? </h3>
-<ul>
-    <% @recipe.posts.each do |post| %> 
-    <li class='tile'> <%= link_to post.user.name, user_path(post.user) %> rated this 
-    <%= link_to 'recipe', post_path(post) %>  
-    <%= post.rating %> out of 5 stars </li><br>
-<%end%> 
-</ul>
-<ul>
-<li class= 'tile '>Type of cuisine: <%= link_to @recipe.cuisine.name, cuisine_path(@recipe.cuisine) %> </li>
-<li class= 'tile '>Prep time: <%=@recipe.prep_time%> min</li>
-<li class= 'tile '>Serving size: <%=@recipe.serving_size%> person</li></ul>
+<h3 >Who cooked this dish? </h3>
 
-<h3 class= 'tile '>Ingredients</h3>
-<ul>
-    <% @recipe.ingredients.each do |ri| %> 
-    <li class= 'tile'><%= link_to ri.name, ingredient_path(ri) %> </li>
+
+    <% @recipe.posts.each do |post| %> 
+    <p> <%= link_to post.user.name, user_path(post.user) %> rated this <%= link_to 'recipe', post_path(post) %>  <%= post.rating %> out of 5 stars </p>
 <%end%> 
-</ul>
+
+<p>Type of cuisine: <%= link_to @recipe.cuisine.name, cuisine_path(@recipe.cuisine) %> </p>
+<p>Prep time: <%=@recipe.prep_time%> min Serving size: <%=@recipe.serving_size%> person</p>
+
+<h3>Ingredients</h3>
+
+    <% @recipe.ingredients.each do |ri| %> 
+    <%= link_to ri.name, ingredient_path(ri) %> 
+</div>
+<%end%> 
+
 </div>
 
 

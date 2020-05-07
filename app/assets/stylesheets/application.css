@@ -8,6 +8,7 @@ h1, h2 {
     font-family: var(--display-font);
 }
 nav {
+    min-width: 1200px;
     position: fixed;
     top: 0;
     overflow: none;
@@ -49,17 +50,63 @@ main {
     flex-direction: column;
     align-items: center;
     width: fit-content;
+    height: auto;
     font-family: Arial, Helvetica, sans-serif;
+    align-items: center;
+}
+.showpost{
+    margin: 4px 4px 40px 4px;
+    font-weight: 800;
+    background-color: rgb(255, 255, 255);
+    padding: 30px 40px; 
+    border-radius: 10px;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.recipeshow {
+    margin: 4px 4px 40px 300px;
+    background-color: rgb(255, 255, 255);
+    padding: 20px 20px 20px 20px; 
+    border-radius: 10px;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
 }
 .background {
 
 }
-
+.padding_bottom_30{
+    padding-bottom: 30px;
+}
+.tile_header{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    text-decoration: none;
+    color:black;
+}
+.tile_text{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    text-decoration: none;
+    color:black;
+}
 .li {
     display: inline;
 }
 .li a {
     padding: 0 12px 0 12px;
+}
+.ing {
+    width: 200px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 20px;
 }
 ul {
     list-style-type: none;
@@ -87,6 +134,32 @@ ul {
     height: 400px;
     font-family: Arial, Helvetica, sans-serif;
 }
+.showpageuser{
+    margin: 40px 30px 200px 100px;
+    font-weight: 800;
+    background-color: rgb(255, 255, 255);
+    padding: 30px; 
+    border-radius: 10px;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    width: fit;
+    font-family: Arial, Helvetica, sans-serif;
+    height: auto;
+}
+.indexpageuser{
+    margin: 20px;
+    font-weight: 800;
+    background-color: rgb(255, 255, 255);
+    padding: 30px; 
+    border-radius: 10px;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    width: 800px;
+    font-family: Arial, Helvetica, sans-serif;
+    height: auto;
+}
 .tile {
     background-color: rgb(255, 255, 255);
      width: 40%;
@@ -100,7 +173,12 @@ ul {
 }
 
 .container {
-  margin-top: -20px;
+    margin-top: -20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.rating_container {
+    line-height: 25px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .list {
     padding: 5px;
