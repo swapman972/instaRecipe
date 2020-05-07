@@ -1,25 +1,27 @@
-<h1> <%= @recipe.name %> </h1>
+<div>
+<h1 class= 'tile rec'> <%= @recipe.name %> </h1>
 
-<%= @recipe.instructions %>
+<p class= 'tile rec'> <%= @recipe.instructions %></p>
 <br>
-<h4>Whos cooking? </h4>
+<h4 class= 'tile rec'>Whos cooking? </h4>
 <ul>
     <% @recipe.posts.each do |post| %> 
-    <li> <%= link_to post.user.name, user_path(post.user) %> gave this a <%= post.rating %> out of 5  </li>
+    <li class= 'tile rec'> <%= link_to post.user, user_path(post.user_id) %> gave this a <%= post.rating %> out of 5  </li>
 <%end%> 
 </ul>
 <br>
 <ul>
-<li>Type of cuisine: <%= link_to @recipe.cuisine.name, cuisine_path(@recipe.cuisine) %> </li>
-<li>Prep time: <%=@recipe.prep_time%> min</li>
-<li>Serving size: <%=@recipe.serving_size%> person</li></ul>
+<li class= 'tile '>Type of cuisine: <%= link_to @recipe.cuisine.name, cuisine_path(@recipe.cuisine) %> </li>
+<li class= 'tile '>Prep time: <%=@recipe.prep_time%> min</li>
+<li class= 'tile '>Serving size: <%=@recipe.serving_size%> person</li></ul>
 
-<h3>Ingredients</h3>
+<h3 class= 'tile '>Ingredients</h3>
 <ul>
     <% @recipe.ingredients.each do |ri| %> 
-    <li><%= link_to ri.name, ingredient_path(ri) %> </li>
+    <li class= 'tile'><%= link_to ri.name, ingredient_path(ri) %> </li>
 <%end%> 
 </ul>
+</div>
 
 
 

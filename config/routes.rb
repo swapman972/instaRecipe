@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  #root 'posts#index'
   resources :cuisines, only: [:index, :show]
   resources :reactions, only: [:new, :create, :edit, :update, :destroy]
   resources :posts 

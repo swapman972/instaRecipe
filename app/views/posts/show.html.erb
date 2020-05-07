@@ -1,37 +1,37 @@
-<h1><%= @post.recipe.name %> </h1>
+<h1 class= 'tile rec'><%= @post.recipe.name %> </h1>
 <br>
 
-<img src= <%= @post.recipe.picture %> > <br>
+<img class='tile rec' src= <%= @post.recipe.picture %> > <br>
 
 <br>
-<h3><%= @post.description %> </h3>
-<h2> by <%= link_to @post.user.name, user_path(@post.user) %> </h2>
+<h3 class= 'tile '><%= @post.description %> </h3>
+<h2 class='tile '> by <%= link_to @post.user.name, user_path(@post.user) %> </h2>
 <br>
 
-<div>
+<div class= 'tile'>
     Liked: <%= @post.like %>
     <%= button_to 'Like this post', like_path(@post), method: :put, class: "btn btn info" %>
 </div>
 <br>
-<div>
+<div class='tile'>
     Dislikes: <%= @post.dislike %>
     <%= button_to 'dislike this post', dislike_path(@post), method: :put, class: "btn btn info" %>
 </div>
 <br>
-<div>
+<div class='tile'>
     love: <%= @post.love %>
     <%= button_to 'love this post', love_path(@post), method: :put, class: "btn btn info" %>
 </div>
 <br>
-<div>
+<div class='tile'>
     Disgust: <%= @post.disgust %>
     <%= button_to 'digust this post', disgust_path(@post), method: :put, class: "btn btn info" %>
 </div>
 
 <br>
-<h4>Comments</h4>
+<h4 class='tile'>Comments</h4>
 <% @post.post_react.each do |react|  %> 
-<h4> <%= react.comment %></h4>
+<h4 class = 'tile'> <%= react.comment %></h4>
 <%end%> 
 
 
