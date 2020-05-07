@@ -1,6 +1,6 @@
-<h1 class= 'tile rec'> <%= @ingredient.name %> </h1>
+<h1 class= 'showpost'> <%= @ingredient.name %> </h1>
 
-<ul class= 'tile rec'>
+<ul class= 'showpost'>
     <% @ingredient.recipes.each do |ri| %>
     <li> <%= link_to ri.name, recipe_path(ri)%> </li>
      <%end%> 
