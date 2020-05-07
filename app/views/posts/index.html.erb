@@ -8,14 +8,14 @@
 </head> -->
 
 <h1 class= 'tile rec'>Post feed</h1>
-
+<br>
 <ul>
    <% @posts.each do |post| %>
-    <li><%= link_to post.user_id.name, user_path(post.user) %> cooked
-    <%= link_to post.recipe_id.name, recipe_path(post.recipe) %>
+    <li class= 'tile'><%= link_to post.user.name, user_path(post.user_id) %> cooked
+    <%= link_to post.recipe.name, recipe_path(post.recipe_id) %>
 <br>
-
-<img src=<%= post.recipe.picture %>> <br>
+<br>
+<img class= 'tile' src=<%= post.recipe.picture %>> <br>
 
 Recommand from the chef: 
 <%(post.rating).times do %>
@@ -30,3 +30,5 @@ Check more about this post!
 <%= button_to 'Check this post', post_path(post.id), method: :get %><br>
 <%end%> </li>
 </ul>
+<br>
+<br>
