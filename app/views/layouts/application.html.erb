@@ -19,7 +19,13 @@
         <li class = 'li'><%=link_to 'Users', users_path%>  </li>
         <li class = 'li'><%=link_to 'Recipes', recipes_path%>  </li>
         <li class = 'li'><%=link_to 'Cuisines', cuisines_path%>  </li>
-        <li class = 'li'><%=link_to 'New User Sign up!', new_user_path%>  </li>
+        <%if @current_user %>
+            <li class = 'li'>Welcome <%=@current_user.name%> !</li>
+          <li class = 'li'><%= link_to 'Log out', log_out_session_path, method: :delete %></li>
+        <% else %>
+          <li class = 'li'><%= link_to 'Sign up!', new_user_path %> </li>
+          <li class = 'li'><%= link_to 'Log in', new_login_path %> </li>
+        <% end %>
       </ul>
     </div>
   </nav>

@@ -11,7 +11,7 @@ Cuisine.destroy_all
 3.times do 
     response = RestClient.get('https://randomuser.me/api/')
     data = JSON.parse(response)
-    User.create(name:data["results"][0]["name"]["first"] , age: data["results"][0]["dob"]["age"], email: data["results"][0]["email"], location: data["results"][0]["location"]["city"], picture: data["results"][0]["picture"]["large"] )
+    User.create(name:data["results"][0]["name"]["first"] , age: data["results"][0]["dob"]["age"], email: data["results"][0]["email"], location: data["results"][0]["location"]["city"], picture: data["results"][0]["picture"]["large"], password: data["results"][0]["login"]["password"] )
 end 
 
 15.times do
