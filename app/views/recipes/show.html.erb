@@ -6,8 +6,8 @@
 <h3>Who cooked this dish? </h3>
 <ul>
     <% @recipe.posts.each do |post| %> 
-    <li> <%= link_to post.user.name, user_path(post.user) %> rated this 
-    <%= link_to 'recipe', post_path(post) %>  
+    <li> <%= link_to post.user.name, user_path(post.user) %> made a 
+    <%= link_to 'post', post_path(post) %>  about this recipe and rated it
     <%= post.rating %> out of 5 stars </li><br>
 <%end%> 
 </ul>

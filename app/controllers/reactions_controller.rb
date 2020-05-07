@@ -4,15 +4,23 @@ class ReactionsController < ApplicationController
 
 
     def new
-        @reaction = @post.reactions.new 
+        @reaction = @post.reactions.new
     end
 
     def create
         @reaction = @post.reactions.create(reaction_params)
+        @reaction[:user_id] = @current_user.id
+        @reaction.save
         redirect_to post_path(@reaction.post)
     end
 
     def edit
+        if Reaction.find(params[:id]).user_id == @current_user.id
+            render :edit 
+        else
+            flash[:error] = "You cannot modify this comment..."
+            redirect_to post_path(@post)
+        end 
     end
 
     def update

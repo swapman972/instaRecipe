@@ -7,6 +7,12 @@
 </style>
 </head>
 
+<%if flash[:error]%>
+    <% flash.each do |type, msg| %>
+        <%= msg %>  
+    <% end %>
+<% end %>
+
 <h1><%= @post.recipe.name %> </h1>
 <br>
  
@@ -43,22 +49,17 @@ Recommand from the chef:
 <br>
 <div class='tile'>
     Disgust: <%= @post.disgust %>
-    <%= button_to 'digust this post', disgust_path(@post), method: :put, class: "btn btn info" %>
+    <%= button_to '🤮', disgust_path(@post), method: :put, class: "btn btn info" %>
 </div>
 
 <br>
-<<<<<<< HEAD
-<h4 class='tile'>Comments</h4>
-<% @post.post_react.each do |react|  %> 
-<h4 class = 'tile'> <%= react.comment %></h4>
-=======
 <h4>Comments:</h4>
 <% @post.post_react.each do |react|  %> 
-<h4> <%= react.comment %> 
+<div class='tile'> <h3> <%=User.find(react.user_id).name%> commented:</h3>
+<h4> <%= react.comment %> </div>
 <%= button_to 'Edit this comment', edit_post_reaction_path(@post, react), method: :get%> 
 <%= button_to 'Delete this comment', [@post, react], method: :delete%><br>
 </h4>
->>>>>>> wed
 <%end%> 
 
 <%= button_to 'Add a comment', new_post_reaction_path(@post), method: :get%> 

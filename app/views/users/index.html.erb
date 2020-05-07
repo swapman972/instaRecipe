@@ -1,6 +1,22 @@
+<%if flash[:errors]%>
+    <%flash[:errors].each do |error|%>
+        <%error%>
+    <% end %>
+<% elsif flash[:error]%>
+    <% flash.each do |type, msg| %>
+        <%= msg %>  
+    <% end %>
+<% end %>
+
 <h1 class= 'tile rec'>Users </h1>
 
-<h4 class= 'tile rec'><%= link_to 'New User Sign up!', new_user_path %> </h4>
+<%if @current_user %>
+    <h2> Welcome <%=@current_user.name%> !</h2>
+    <h4 class= 'tile rec'><%= link_to 'Log out', log_out_session_path, method: :delete %></h4>
+<% else %>
+    <h4 class= 'tile rec'><%= link_to 'New User Sign up!', new_user_path %> </h4>
+    <h4 class= 'tile rec'><%= link_to 'Log in', new_login_path %> </h4>
+<% end %>
 <ul>
          <% @users.each do |user| %> 
     <li class= 'tile'><%= link_to user.name, user_path(user) %>  </li>
