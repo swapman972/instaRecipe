@@ -1,7 +1,10 @@
 <h1 class= 'tile rec'> <%= @ingredient.name %> </h1>
 
+<<<<<<< HEAD
 <%=@ingredient.picture %> <br>
 
+=======
+>>>>>>> thursdaycss
 <ul class= 'tile rec'>
     <% @ingredient.recipes.each do |ri| %>
     <li> <%= link_to ri.name, recipe_path(ri)%> </li>

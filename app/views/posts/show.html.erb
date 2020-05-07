@@ -1,14 +1,16 @@
-<head>
+<!-- <head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 .checked {
   color: red;
 }
 </style>
-</head>
-
-<h1><%= @post.recipe.name %> </h1>
+</head> -->
+<div class='showpost'>
+<h1 class='tile'><%= @post.recipe.name %> </h1>
 <br>
+
+
  
 <img src= <%= @post.recipe.picture %> > <br>
 
@@ -24,44 +26,36 @@ Recommand from the chef:
 <% (5 - (@post.rating)).times do %>
 <span class="fa fa-star"></span>
 <% end %>
-<br><br>
 
-<div class= 'tile'>
+
+
     Liked: <%= @post.like %>
     <%= button_to 'Like this post', like_path(@post), method: :put, class: "btn btn info" %>
-</div>
-<br>
-<div class='tile'>
+
+
+
     Dislikes: <%= @post.dislike %>
     <%= button_to 'dislike this post', dislike_path(@post), method: :put, class: "btn btn info" %>
-</div>
-<br>
-<div class='tile'>
+
+
+
     love: <%= @post.love %>
     <%= button_to 'love this post', love_path(@post), method: :put, class: "btn btn info" %>
-</div>
-<br>
-<div class='tile'>
+
     Disgust: <%= @post.disgust %>
     <%= button_to 'digust this post', disgust_path(@post), method: :put, class: "btn btn info" %>
-</div>
 
-<br>
-<<<<<<< HEAD
-<h4 class='tile'>Comments</h4>
-<% @post.post_react.each do |react|  %> 
-<h4 class = 'tile'> <%= react.comment %></h4>
-=======
-<h4>Comments:</h4>
+
+<h4 class='list'>Comments:</h4>
 <% @post.post_react.each do |react|  %> 
 <h4> <%= react.comment %> 
 <%= button_to 'Edit this comment', edit_post_reaction_path(@post, react), method: :get%> 
 <%= button_to 'Delete this comment', [@post, react], method: :delete%><br>
 </h4>
->>>>>>> wed
 <%end%> 
 
 <%= button_to 'Add a comment', new_post_reaction_path(@post), method: :get%> 
 <%= button_to 'Edit this post', edit_post_path(@post), method: :get%> 
 <%= button_to 'Delete this post', post_path(@post), method: :delete%><br>
 
+</div>

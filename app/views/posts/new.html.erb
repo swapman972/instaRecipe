@@ -7,7 +7,7 @@
 
 <h1 class= 'tile rec'>New Post</h1>
 
-<h4 class= 'tile rec'><%= form_for @post do |f| %>
+<h4 class= 'usersignup'><%= form_for @post do |f| %>
 Who is cooking? <br>
 <%=f.label :Chef%>
 <%=f.collection_select :user_id, User.all, :id, :name%><br><br>
