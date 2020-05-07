@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   resources :cuisines, only: [:index, :show]
-  resources :reactions, only: [:new, :create, :edit, :update, :destroy]
-  resources :posts 
+  resources :posts do
+    resources :reactions, only: [:new, :create, :edit, :update, :destroy]
+  end
   resources :ingredients, only: [:index, :show]
   resources :recipes, only: [:index, :show]
   resources :users

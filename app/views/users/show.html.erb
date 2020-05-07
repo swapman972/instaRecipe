@@ -1,3 +1,12 @@
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.checked {
+  color: red;
+}
+</style>
+</head>
+
 <h1> <%= @user.name %> </h1>
 <h2> <%= @user.location %> </h2>
 <h2> Age: <%= @user.age %> </h2>
@@ -10,7 +19,13 @@
 <h3> Posts </h3>
 <ul>
     <% @user.posts.each do |post| %> 
-    <li><%= link_to post.recipe.name, post_path(post) %> || Rading <%= post.rating %> </li>
+        <li><%= link_to post.recipe.name, post_path(post) %> || Rating 
+        <%(post.rating).times do %> 
+            <span class="fa fa-star checked"></span>
+        <% end %>
+        <% (5 - (post.rating)).times do %>
+            <span class="fa fa-star"></span>
+        <% end %>
     <%end%> 
 </ul>
 

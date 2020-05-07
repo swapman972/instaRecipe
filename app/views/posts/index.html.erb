@@ -11,22 +11,23 @@
 
 <ul>
 <% @posts.each do |post| %>
-<li><%= link_to User.find(post.user_id).name, user_path(post.user_id) %> cooked 
-<%= link_to Recipe.find(post.recipe_id).name, recipe_path(post.recipe_id) %>
-<br>
+<h3> Create Your own post => <%= link_to 'here', new_post_path %> <= </h3>
+  <li><%= link_to User.find(post.user_id).name, user_path(post.user_id) %> cooked 
+  <%= link_to Recipe.find(post.recipe_id).name, recipe_path(post.recipe_id) %>
+  <br>
 
-<img src=<%= post.recipe.picture %>> <br>
+  <img src=<%= post.recipe.picture %>> <br>
 
-Recommand from the chef: 
-<%(post.rating).times do %>
-    <span class="fa fa-star checked"></span>
-<% end %>
-<% (5 - (post.rating)).times do %>
-<span class="fa fa-star"></span>
-<% end %>
-<br><br>
+  Recommand from the chef: 
+  <%(post.rating).times do %>
+      <span class="fa fa-star checked"></span>
+  <% end %>
+  <% (5 - (post.rating)).times do %>
+    <span class="fa fa-star"></span>
+  <% end %>
+  <br><br>
 
-Check more about this post!
-<%= button_to 'Check this post', post_path(post.id), method: :get %><br>
+  Check more about this post!
+  <%= button_to 'Check this post', post_path(post.id), method: :get %><br>
 <%end%> </li>
 </ul>

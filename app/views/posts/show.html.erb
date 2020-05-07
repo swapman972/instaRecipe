@@ -1,12 +1,30 @@
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.checked {
+  color: red;
+}
+</style>
+</head>
+
 <h1><%= @post.recipe.name %> </h1>
 <br>
-
+ 
 <img src= <%= @post.recipe.picture %> > <br>
 
 <br>
+<h2>Description: </h2>
 <h3><%= @post.description %> </h3>
 <h2> by <%= link_to @post.user.name, user_path(@post.user) %> </h2>
-<br>
+
+Recommand from the chef: 
+<%(@post.rating).times do %>
+    <span class="fa fa-star checked"></span>
+<% end %>
+<% (5 - (@post.rating)).times do %>
+<span class="fa fa-star"></span>
+<% end %>
+<br><br>
 
 <div>
     Liked: <%= @post.like %>
@@ -29,12 +47,15 @@
 </div>
 
 <br>
-<h4>Comments</h4>
+<h4>Comments:</h4>
 <% @post.post_react.each do |react|  %> 
-<h4> <%= react.comment %></h4>
+<h4> <%= react.comment %> 
+<%= button_to 'Edit this comment', edit_post_reaction_path(@post, react), method: :get%> 
+<%= button_to 'Delete this comment', [@post, react], method: :delete%><br>
+</h4>
 <%end%> 
 
-
+<%= button_to 'Add a comment', new_post_reaction_path(@post), method: :get%> 
 <%= button_to 'Edit this post', edit_post_path(@post), method: :get%> 
 <%= button_to 'Delete this post', post_path(@post), method: :delete%><br>
 

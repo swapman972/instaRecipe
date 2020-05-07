@@ -1,1 +1,10 @@
-edit view
+<h1>Edit Your comment</h1>
+
+<img src= <%= @reaction.post.recipe.picture %> > <br>
+
+<%= form_for [@post, @reaction] do |f| %>
+  <%=f.label :comment%>
+  <%=f.text_area :comment%>
+
+  <%=f.submit value="Edit comment"%>
+<% end %>

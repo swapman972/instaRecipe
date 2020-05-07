@@ -1,32 +1,41 @@
 class ReactionsController < ApplicationController
+    before_action :get_post
+    before_action :set_reaction, only: [:show, :edit, :update, :destroy]
+
 
     def new
-        @reaction = Reaction.new 
+        @reaction = @post.reactions.new 
     end
 
     def create
-        @reaction = Reaction.create(reaction_params)
-        redirect_to reaction_path(@reaction.id)
+        @reaction = @post.reactions.create(reaction_params)
+        redirect_to post_path(@reaction.post)
     end
 
     def edit
-        @reaction = Reaction.find(params[:id])
     end
 
     def update
-        @reaction = Reaction.find(params[:id])
         @reaction.update(reaction_params)
-        redirect_to reaction_path(@reaction.id)
+        redirect_to post_path(@post)
     end
 
     def destroy
-        @reaction = Reaction.find(params[:id])
+        reaction_post = @reaction.post
         @reaction.destroy
-        redirect_to reactions_path
+        redirect_to post_path(reaction_post)
     end
 
     private
         def reaction_params
-            params.require(:reaction).permit(:comment, :like, :dislike, :love, :disgust, :post_id, :user_id)
+            params.require(:reaction).permit(:comment, :post_id)
+        end
+
+        def get_post
+            @post = Post.find(params[:post_id])
+        end
+
+        def set_reaction
+            @reaction = @post.reactions.find(params[:id])
         end
 end

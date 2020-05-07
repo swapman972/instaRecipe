@@ -2,13 +2,14 @@
 
 <%= @recipe.instructions %>
 <br>
-<h4>Whos cooking? </h4>
+<h3>Who cooked this dish? </h3>
 <ul>
     <% @recipe.posts.each do |post| %> 
-    <li> <%= link_to post.user.name, user_path(post.user) %> gave this a <%= post.rating %> out of 5  </li>
+    <li> <%= link_to post.user.name, user_path(post.user) %> rated this 
+    <%= link_to 'recipe', post_path(post) %>  
+    <%= post.rating %> out of 5 stars </li><br>
 <%end%> 
 </ul>
-<br>
 <ul>
 <li>Type of cuisine: <%= link_to @recipe.cuisine.name, cuisine_path(@recipe.cuisine) %> </li>
 <li>Prep time: <%=@recipe.prep_time%> min</li>
