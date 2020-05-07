@@ -6,4 +6,6 @@ class Recipe < ApplicationRecord
     belongs_to :cuisine
     validates :name, uniqueness: true
     belongs_to :cuisine
+
+    
 end
