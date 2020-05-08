@@ -23,10 +23,10 @@ How was it?
 <%=f.label :Rating%>
 <%=f.number_field :rating%><br><br>
 
-<%=f.label :Picture %> 
-<%=f.file_field :picture %><br><br>
+<%f.label :Picture %> 
+<%f.file_field :picture %><br><br>
 
-<%=f.submit value="Create your post"%>
+<%=f.submit value="Create your post", class: 'button_red'%>
   
 <% end %>
 <br>
