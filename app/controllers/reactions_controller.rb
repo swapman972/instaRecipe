@@ -30,8 +30,13 @@ class ReactionsController < ApplicationController
 
     def destroy
         reaction_post = @reaction.post
-        @reaction.destroy
-        redirect_to post_path(reaction_post)
+        if Reaction.find(params[:id]).user_id == @current_user.id
+            @reaction.destroy
+            redirect_to post_path(reaction_post) 
+        else
+            flash[:error] = "You cannot delete this comment..."
+            redirect_to post_path(@post)
+        end 
     end
 
     private

@@ -12,7 +12,7 @@
     <h2> <%= @user.location %> </h2>
     <h2> Age: <%= @user.age %> </h2>
 
-    <img src="<%="#{@user.picture}"%>">
+    <img src=<%= @user.picture%> >
 
     <br>
     <p> <%= link_to 'Edit User', edit_user_path(@user)%> </p>

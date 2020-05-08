@@ -31,9 +31,9 @@ end
 end 
 
 10.times do 
-    Post.create(description: Faker::Hipster.paragraph(sentence_count: 2), rating: rand(1..5), user_id: User.all.sample.id, recipe_id: Recipe.all.sample.id, like: rand(1..20), dislike: rand(1..20), disgust: rand(1..20), love: rand(1..20))
+    Post.create(description: Faker::Quote.famous_last_words, rating: rand(1..5), user_id: User.all.sample.id, recipe_id: Recipe.all.sample.id, like: rand(1..20), dislike: rand(1..20), disgust: rand(1..20), love: rand(1..20))
 end 
 
 50.times do 
-    Reaction.create(comment: Faker::Hipster.sentences(number: 1), post_id: Post.all.sample.id, user_id: User.all.sample.id) 
+    Reaction.create(comment: Faker::Quote.yoda, post_id: Post.all.sample.id, user_id: User.all.sample.id) 
 end 

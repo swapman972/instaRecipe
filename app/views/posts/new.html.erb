@@ -8,15 +8,16 @@
 <h1 class= 'tile rec'>New Post</h1>
 
 <h4 class= 'usersignup'><%= form_for @post do |f| %>
+
 Who is cooking? <br>
-<%=f.label :Chef%>
-<%=f.collection_select :user_id, User.all, :id, :name%><br><br>
+Chef:
+<%=@current_user.name%><br><br>
 
 What are they cooking?<br>
 <%=f.label :Recipe%>
 <%=f.collection_select :recipe_id, Recipe.all, :id, :name%><br><br>
 
-<%=f.label :Description%>
+How was it?
 <%=f.text_area :description%><br><br>
 
 <%=f.label :Rating%>
