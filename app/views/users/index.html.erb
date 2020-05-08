@@ -1,14 +1,15 @@
-<div class='showpost'>
+
 <%if flash[:errors]%>
+<div class='showpost'></div>
     <%flash[:errors].each do |error|%>
         <%error%>
     <% end %>
 <% elsif flash[:error]%>
     <% flash.each do |type, msg| %>
         <%= msg %>  
+    </div>
     <% end %>
 <% end %>
-</div>
 <div>
     <% @users.each do |user| %> 
     <div class='indexpageuser'>
