@@ -200,6 +200,7 @@ ul {
     font-size: 20px;
     margin: 4px 2px;
     cursor: pointer;
+    border-radius: 12px;
 }
 .button_blue{
     background-color: #0447ff;
@@ -212,6 +213,7 @@ ul {
     font-size: 12px;
     margin: 4px 2px;
     cursor: pointer;
+    border-radius: 12px;
 }
 .button_default{
     padding: 15px 25px;

@@ -1,16 +1,17 @@
 
+<div>
 <%if flash[:errors]%>
 <div class='showpost'></div>
     <%flash[:errors].each do |error|%>
-        <%error%>
+       <h2 class= 'tile rec' ><%error%></h2>
     <% end %>
 <% elsif flash[:error]%>
     <% flash.each do |type, msg| %>
-        <%= msg %>  
+       <h2 class= 'tile rec'> <%= msg %>  </h2>
     </div>
     <% end %>
 <% end %>
-<div>
+
     <% @users.each do |user| %> 
     <div class='indexpageuser'>
        <%= link_to user.name, user_path(user), class: "tile_header" %> 
