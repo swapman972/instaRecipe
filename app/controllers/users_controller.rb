@@ -35,7 +35,7 @@ class UsersController < ApplicationController
         if @user == @current_user
             render :edit 
         else
-            flash[:error] = "HAHAHA, You thought you were smart?"
+            flash[:error] = "😂😂😂, You thought you were smart?"
             redirect_to users_path 
         end 
     end

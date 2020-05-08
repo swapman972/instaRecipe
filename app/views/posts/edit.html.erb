@@ -9,8 +9,7 @@
 
 <h4 class= 'tile rec'><%= form_for @post do |f| %>
 Who is cooking? <br>
-<%=f.label :chef%>
-<%=f.collection_select :user_id, User.all, :id, :name%><br><br>
+<%=@current_user.name%><br><br>
 
 What is this chef cooking?<br>
 <%=f.label :recipe%>

@@ -3,7 +3,7 @@
 
 <p> <%= @recipe.instructions %></p>
 <br>
-<h3 >Who cooked this dish? </h3>
+<h3 >Who cooked this dish? </h3> 
 
 
     <% @recipe.posts.each do |post| %> 
@@ -21,7 +21,7 @@
     <%= link_to ri.name, ingredient_path(ri) %> 
 
 <%end%> 
-
+</div>
 </div>
 
 

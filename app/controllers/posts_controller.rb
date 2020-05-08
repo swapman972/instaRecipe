@@ -14,6 +14,8 @@ class PostsController < ApplicationController
 
     def create
         @post = Post.create(post_params)
+        @post[:user_id] = @current_user.id
+        @post.save
         if @post.valid?
             redirect_to post_path(@post.id)
         else
@@ -24,7 +26,16 @@ class PostsController < ApplicationController
 
     def edit
         @post = Post.find(params[:id])
+        if @post.user_id == @current_user.id
+            render :edit 
+        else
+            flash[:error] = "Sorry, this is not your post."
+            redirect_to post_path(@post)
+        end 
     end
+
+
+
 
     def update
         @post = Post.find(params[:id])
@@ -38,8 +49,13 @@ class PostsController < ApplicationController
 
     def destroy
         @post = Post.find(params[:id])
-        @post.destroy
-        redirect_to posts_path
+        if @post.user_id == @current_user.id
+            @post.destroy
+            redirect_to posts_path
+        else
+            flash[:error] = "Sorry, this is not your post."
+            redirect_to post_path(@post)
+        end 
     end
 
     def like 
