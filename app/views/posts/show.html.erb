@@ -37,6 +37,7 @@ Recommand from the chef:
 <span class="fa fa-star"></span>
 <% end %>
 </div>
+<div clsss='containstars'>
 <p class='emoji'>
     <%= @post.like %>
     <%= link_to '👍', like_path(@post), method: :put%>
@@ -49,19 +50,20 @@ Recommand from the chef:
 
     <%= @post.disgust %>
     <%= link_to '🤮', disgust_path(@post), method: :put%>
-</p>
+</p></div>
 <h4 class='list'>Comments:</h4>
 <% @post.post_react.each do |react|  %> 
 <div class='tile'> <h3> <%=User.find(react.user_id).name%> commented:</h3>
 <h4> <%= react.comment %> </div>
+    <div class ='containstars'>
 <%= button_to 'Edit this comment', edit_post_reaction_path(@post, react), method: :get, class: 'button_blue'%> 
-<%= button_to 'Delete this comment', [@post, react], method: :delete, class: 'button_blue'%><br>
+<%= button_to 'Delete this comment', [@post, react], method: :delete, class: 'button_blue'%><br></div>
 </h4>
 <%end%> 
-
+<div class='containstars'>
 <%= button_to 'Add a comment', new_post_reaction_path(@post), method: :get, class: 'button_red'%> 
 <%= button_to 'Edit this post', edit_post_path(@post), method: :get, class: 'button_red'%> 
 <%= button_to 'Delete this post', post_path(@post), method: :delete, class: 'button_red'%><br> 
-
+</div>
 
 </div>

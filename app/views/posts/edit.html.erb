@@ -4,10 +4,10 @@
     <% end %>
 <% end %>
 
+<div class='showpageuser'>
+<h1>Edit this Post</h1>
 
-<h1 class= 'tile rec'>Edit this Post</h1>
-
-<h4 class= 'tile rec'><%= form_for @post do |f| %>
+<h4><%= form_for @post do |f| %>
 Who is cooking? <br>
 <%=@current_user.name%><br><br>
 
@@ -24,3 +24,4 @@ What is this chef cooking?<br>
 <%=f.submit value="Edit this post"%>
   
 <% end %>
+</div>
