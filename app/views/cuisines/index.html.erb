@@ -2,7 +2,11 @@
 
 <ul class = 'tile rec'>
     <% @cuisines.each do |i| %>
-        <li><%= link_to i.name, cuisine_path(i) %></li>
+        <%if i.name == nil %>
+            <%= link_to "confort food", cuisine_path(i) %></li>
+        <% else %>
+            <li><%= link_to i.name, cuisine_path(i) %></li>
+        <% end %>
     <%end%>
 
 </ul>

@@ -3,7 +3,7 @@
 <div class='showpost'>
 <ul>
 <% @recipes.each do |rec| %> 
-    <li class ='tile '><%=link_to rec.name, recipe_path(rec)%> type of cuisine: <%=Cuisine.find(rec.cuisine_id).name%></li><br>
+        <li class ='tile '><%=link_to rec.name, recipe_path(rec)%> type of cuisine: <%=Cuisine.find(rec.cuisine_id).name%></li><br>
 <%end%> 
 </ul>
 </div>

@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   #root 'posts#index'
   resources :cuisines, only: [:index, :show]
+
   resources :posts do
     resources :reactions, only: [:new, :create, :edit, :update, :destroy]
   end
+  
   resources :ingredients, only: [:index, :show]
   resources :recipes, only: [:index, :show]
   resources :users
