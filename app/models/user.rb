@@ -6,4 +6,8 @@ class User < ApplicationRecord
     validates :email, uniqueness: true
 
     has_secure_password
+
+    # def number_of_post
+    #     self.posts.count
+    # end
 end
